@@ -1,6 +1,19 @@
 /** @type {import('dependency-cruiser').IConfiguration} */
 module.exports = {
-  forbidden: [],
+  forbidden: [
+    {
+      name: "no-disallowed-dependency-in-root-layout",
+      severity: "error",
+      comment: "Plz no :( Bundle size explosion! Vercel bill not happy!",
+      from: {
+        path: "^src/app/layout[.]tsx",
+      },
+      to: {
+        path: "node_modules/lodash",
+        reachable: true,
+      },
+    },
+  ],
   options: {
     /* Which modules not to follow further when encountered */
     doNotFollow: {
