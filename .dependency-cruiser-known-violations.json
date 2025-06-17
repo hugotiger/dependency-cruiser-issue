@@ -1,0 +1,34 @@
+[
+  {
+    "type": "reachability",
+    "from": "src/app/layout.tsx",
+    "to": "node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/noop.js",
+    "rule": {
+      "severity": "error",
+      "name": "no-disallowed-dependency-in-root-layout"
+    },
+    "via": [
+      {
+        "name": "src/app/providers.tsx",
+        "dependencyTypes": [
+          "local",
+          "import"
+        ]
+      },
+      {
+        "name": "src/context/theme-context.tsx",
+        "dependencyTypes": [
+          "local",
+          "import"
+        ]
+      },
+      {
+        "name": "node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/noop.js",
+        "dependencyTypes": [
+          "npm",
+          "import"
+        ]
+      }
+    ]
+  }
+]
